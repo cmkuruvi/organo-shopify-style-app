@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Style Finder</title>
+</head>
+<body>
+    <h1>Find Your Perfect Style</h1>
+    
+    <form id="styleForm">
+        <label>Skin Tone (Undertone):</label>
+        <input type="text" id="skin_tone" required><br>
+
+        <label>Skin Color:</label>
+        <input type="text" id="skin_color" required><br>
+
+        <label>Hair Color:</label>
+        <input type="text" id="hair_color" required><br>
+
+        <label>Eye Color:</label>
+        <input type="text" id="eye_color" required><br>
+
+        <label>Personality:</label>
+        <input type="text" id="personality" required><br>
+
+        <label>Exclusive Color Group Name:</label>
+        <input type="text" id="color_group" required><br>
+
+        <label>Style in One Word:</label>
+        <input type="text" id="style_word" required><br>
+
+        <button type="submit">Get My Style</button>
+    </form>
+
+    <h2>Style Recommendation:</h2>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("styleForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const userInput = {
+                skin_tone: document.getElementById("skin_tone").value,
+                skin_color: document.getElementById("skin_color").value,
+                hair_color: document.getElementById("hair_color").value,
+                eye_color: document.getElementById("eye_color").value,
+                personality: document.getElementById("personality").value,
+                color_group: document.getElementById("color_group").value,
+                style_word: document.getElementById("style_word").value
+            };
+
+            fetch("/get_style", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userInput)
+            })
+            .then(response => response.json())
+            .then(data => {
+                let result = "<p><strong>Style Persona:</strong> " + data["Style Persona"] + "</p>";
+                result += "<p><strong>Best Occasions:</strong> " + data["Best Occasions for This Color"] + "</p>";
+                result += "<p><strong>Power Statement:</strong> " + data["Power Statement"] + "</p>";
+                result += "<p><strong>Shirt Colors:</strong> " + data["Suggested Shirt Colors"] + "</p>";
+                result += "<p><strong>Pant Colors:</strong> " + data["Suggested Pant Colors"] + "</p>";
+                result += "<p><strong>Top Clothing Priority:</strong> " + data["Top Clothing Priority"] + "</p>";
+                result += "<p><strong>Celebrity Wardrobe:</strong> " + data["Celebrity Wardrobe Inspiration"] + "</p>";
+                document.getElementById("output").innerHTML = result;
+            })
+            .catch(error => console.log("Error:", error));
+        });
+    </script>
+</body>
+</html>
