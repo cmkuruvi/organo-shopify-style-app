@@ -13,7 +13,7 @@ skin_color = st.radio("Skin Color:", ["Fair", "Golden", "Porcelain", "Olive", "H
 hair_color = st.radio("Hair Color:", ["Blonde", "Dark Brown", "Black", "Red"])
 eye_color = st.radio("Eye Color:", ["Blue", "Green", "Dark Brown", "Hazel"])
 personality = st.radio("Personality:", ["Bold", "Classic", "Earthy", "Soft/Romantic"])
-color_group = st.radio("Exclusive Color Group Name:", ["Velvet Ember", "Earthy Espresso", "Indigo Nomad", "Midnight Commander", "Evergreen Chic"])
+color_group = st.radio("Exclusive Color Group Name:", ["Velvet Ember", "Earthy Espresso", "Indigo Nomad", "Midnight Commander", "Evergreen Chic", "Sun-Kissed Bliss", "Peachy Whimsy", "Golden Zest", "Celestial Sapphire", "Frosted Elegance"])
 style_word = st.radio("Style in One Word:", ["Classic", "Minimalist", "Bold & Expressive", "Relaxed & Effortless"])
 
 if st.button("Get My Style"):
@@ -30,7 +30,7 @@ if st.button("Get My Style"):
     if not filtered_df.empty:
         result = filtered_df.iloc[0][[
             "Style Persona", "Best Occasions for This Color", "Power Statement",
-            "Suggested Shirt Colors", "Suggested Pant Colors", "Top Clothing Priority",
+            "Suggested Shirt Colors", "Top Clothing Priority",
             "Celebrity Wardrobe Inspiration"
         ]]
         st.success("Here’s your personalized style recommendation!")
