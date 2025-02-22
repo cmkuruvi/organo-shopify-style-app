@@ -5,6 +5,7 @@ import pandas as pd
 csv_file = "demography_all_possible_combinations.csv"
 df = pd.read_csv(csv_file)
 
+st.image("2.png", width=200)
 st.title("Find Your Perfect Style")
 
 # Collecting user inputs
