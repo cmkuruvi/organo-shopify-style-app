@@ -4,31 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalized Style Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <h1>Find Your Perfect Style</h1>
-    
+
     <form id="styleForm">
-        <label>"Enter your Skin Tone (Undertone) (Warm/Cool/Neutral): ":</label>
-        <input type="text" id="skin_tone" required><br>
+        <div class="form-group">
+            <label>Skin Tone (Undertone):</label>
+            <div class="radio-group">
+                <input type="radio" name="skin_tone" value="Warm"> Warm
+                <input type="radio" name="skin_tone" value="Cool"> Cool
+                <input type="radio" name="skin_tone" value="Neutral"> Neutral
+            </div>
+        </div>
 
-        <label>"Enter your Skin Color (Fair/Golden/Porcelain/Olive/Honey): "</label>
-        <input type="text" id="skin_color" required><br>
+        <div class="form-group">
+            <label>Skin Color:</label>
+            <div class="radio-group">
+                <input type="radio" name="skin_color" value="Fair"> Fair
+                <input type="radio" name="skin_color" value="Golden"> Golden
+                <input type="radio" name="skin_color" value="Porcelain"> Porcelain
+                <input type="radio" name="skin_color" value="Olive"> Olive
+                <input type="radio" name="skin_color" value="Honey"> Honey
+            </div>
+        </div>
 
-        <label>"Enter your Hair Color (Blonde/Dark Brown/Black/Red): "</label>
-        <input type="text" id="hair_color" required><br>
+        <div class="form-group">
+            <label>Hair Color:</label>
+            <div class="radio-group">
+                <input type="radio" name="hair_color" value="Blonde"> Blonde
+                <input type="radio" name="hair_color" value="Dark Brown"> Dark Brown
+                <input type="radio" name="hair_color" value="Black"> Black
+                <input type="radio" name="hair_color" value="Red"> Red
+            </div>
+        </div>
 
-        <label>"Enter your Eye Color (Blue/Green/Dark Brown/Hazel): "</label>
-        <input type="text" id="eye_color" required><br>
+        <div class="form-group">
+            <label>Eye Color:</label>
+            <div class="radio-group">
+                <input type="radio" name="eye_color" value="Blue"> Blue
+                <input type="radio" name="eye_color" value="Green"> Green
+                <input type="radio" name="eye_color" value="Dark Brown"> Dark Brown
+                <input type="radio" name="eye_color" value="Hazel"> Hazel
+            </div>
+        </div>
 
-        <label>"Enter your Personality (Bold/Classic/Earthy/Soft Romantic): "</label>
-        <input type="text" id="personality" required><br>
+        <div class="form-group">
+            <label>Personality:</label>
+            <div class="radio-group">
+                <input type="radio" name="personality" value="Bold"> Bold
+                <input type="radio" name="personality" value="Classic"> Classic
+                <input type="radio" name="personality" value="Earthy"> Earthy
+                <input type="radio" name="personality" value="Soft/Romantic"> Soft/Romantic
+            </div>
+        </div>
 
-        <label>"Enter your Exclusive Color Group Name (e.g., Earthy Espresso, Celestial Sapphire): "</label>
-        <input type="text" id="color_group" required><br>
+        <div class="form-group">
+            <label>Exclusive Color Group Name:</label>
+            <div class="radio-group">
+                <input type="radio" name="color_group" value="Velvet Ember"> Velvet Ember
+                <input type="radio" name="color_group" value="Earthy Espresso"> Earthy Espresso
+                <input type="radio" name="color_group" value="Indigo Nomad"> Indigo Nomad
+                <input type="radio" name="color_group" value="Midnight Commander"> Midnight Commander
+                <input type="radio" name="color_group" value="Evergreen Chic"> Evergreen Chic
+            </div>
+        </div>
 
-        <label>"Enter your Style in One Word (Classic/Minimalist/Bold & Expressive/Relaxed & Effortless): "</label>
-        <input type="text" id="style_word" required><br>
+        <div class="form-group">
+            <label>Style in One Word:</label>
+            <div class="radio-group">
+                <input type="radio" name="style_word" value="Classic"> Classic
+                <input type="radio" name="style_word" value="Minimalist"> Minimalist
+                <input type="radio" name="style_word" value="Bold & Expressive"> Bold & Expressive
+                <input type="radio" name="style_word" value="Relaxed & Effortless"> Relaxed & Effortless
+            </div>
+        </div>
 
         <button type="submit">Get My Style</button>
     </form>
@@ -39,14 +124,24 @@
     <script>
         document.getElementById("styleForm").addEventListener("submit", function(event) {
             event.preventDefault();
+            
+            // Collecting values from radio buttons
+            function getSelectedValue(name) {
+                let radios = document.getElementsByName(name);
+                for (let radio of radios) {
+                    if (radio.checked) return radio.value;
+                }
+                return null;
+            }
+
             const userInput = {
-                skin_tone: document.getElementById("skin_tone").value,
-                skin_color: document.getElementById("skin_color").value,
-                hair_color: document.getElementById("hair_color").value,
-                eye_color: document.getElementById("eye_color").value,
-                personality: document.getElementById("personality").value,
-                color_group: document.getElementById("color_group").value,
-                style_word: document.getElementById("style_word").value
+                skin_tone: getSelectedValue("skin_tone"),
+                skin_color: getSelectedValue("skin_color"),
+                hair_color: getSelectedValue("hair_color"),
+                eye_color: getSelectedValue("eye_color"),
+                personality: getSelectedValue("personality"),
+                color_group: getSelectedValue("color_group"),
+                style_word: getSelectedValue("style_word")
             };
 
             fetch("/get_style", {
