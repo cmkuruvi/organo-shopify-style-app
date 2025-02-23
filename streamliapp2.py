@@ -83,6 +83,7 @@ def skin_color_selector():
     if "skin_color" not in st.session_state:
         st.session_state.skin_color = list(skin_colors.keys())[0]
     return st.session_state.skin_color
+    st.markdown(chosen_color)
 
 # ---------------------------
 # Mapping for Exclusive Color Group images (replace placeholder URLs with actual image links)
