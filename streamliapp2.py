@@ -155,7 +155,7 @@ if st.button("Get My Color Psyche"):
     if not filtered_df.empty:
         result = filtered_df.iloc[0][[
             "Style Persona", "Celebrity Wardrobe Inspiration", "Top Clothing Priority", 
-            "Color Statement", "Suggested Shirt Colors", "Suggested Suit Colors", "Suggested Pant Colors"
+            "Color Statement", "Suggested Shirt Colors"
         ]]
         st.success("Here’s your personalized style recommendation!")
         
@@ -179,10 +179,3 @@ if st.button("Get My Color Psyche"):
     else:
         st.warning("No exact match found! Please try different input values.")
 
-# ---------------------------
-# UI Improvement Feedback Section
-# ---------------------------
-st.markdown("### UI Improvement Feedback")
-st.markdown("1. Does the swatch layout for Skin Color clearly display each option?")
-st.markdown("2. Is the image display for the Exclusive Color Group helpful for your selection?")
-st.markdown("3. Are the clickable product links correctly directing to your Shopify store?")
