@@ -44,16 +44,16 @@ st.markdown("""
 # Predefined Skin Color Options with HEX codes (update as needed)
 # ---------------------------
 skin_colors = {
-    "Fair": "#FCE2C6",
-    "Light": "#F7D4B4",
-    "Light Beige": "#EAD2B0",
-    "Medium": "#D3A179",
-    "Olive": "#8F9779",
-    "Tan": "#D2B48C",
-    "Brown": "#8B4513",
-    "Dark Brown": "#654321",
-    "Ebony": "#555D50",
-    "Deep Black": "#000000"
+    "Fair": "#FFE0BD",
+    "Light": "#FFCD94",
+    "Light Beige": "#EAC086",
+    "Medium": "#D8A47F",
+    "Olive": "#C68642",
+    "Tan": "#8D5524",
+    "Brown": "#7D4B20",
+    "Dark Brown": "#5C3A21",
+    "Ebony": "#3B2F2F",
+    "Deep Black": "#1C1C1C"
 }
 
 # Function to render a swatch-based selector for Skin Color.
@@ -161,7 +161,7 @@ if st.button("Get My Color Psyche"):
         
         # Function to convert suggested color names into clickable Shopify product links.
         def create_link(color):
-            url = product_df.loc[product_df["Color Name"] == color, "Product URL"]
+            url = product_df.loc[product_df["Item Name ORGANO"] == color, "URL"]
             if not url.empty:
                 return f"[{color}]({url.values[0]})"
             else:
