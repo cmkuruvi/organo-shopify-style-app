@@ -40,7 +40,7 @@ st.markdown("""
         cursor: pointer;
     }
     .swatch-label {
-        text-align: left;
+        text-align: center;
         font-size: 0.7em;
         margin-top: 2px;
     }
@@ -134,7 +134,7 @@ with col1:
 with col2:
     st.markdown("### Exclusive Color Group Name")
     selected_color_group = st.selectbox("Choose your Color Group:", list(color_group_images.keys()))
-    st.image(color_group_images[selected_color_group], width=200)
+    st.image(color_group_images[selected_color_group], width=300)
     
     style_word = st.radio("Style Word:", ["Classic", "Minimalist", "Bold & Expressive", "Relaxed & Effortless", "Timeless", "Fashion-Forward"])
     clothing_occasion = st.radio("Clothing Occasion:", [
