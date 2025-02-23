@@ -173,19 +173,19 @@ if st.button("Get My Color Psyche"):
         with st.container():
             st.subheader("Your Style Recommendation")
             
-            st.markdown("**Style Persona:**")
-            st.write(result["***Style Persona***"])
+            st.markdown("***Style Persona:***")
+            st.write(result["Style Persona"])
             
-            st.markdown("**Celebrity Wardrobe Inspiration:**")
-            st.write(result["***Celebrity Wardrobe Inspiration***"])
+            st.markdown("***Celebrity Wardrobe Inspiration:***")
+            st.write(result["Celebrity Wardrobe Inspiration"])
             
-            st.markdown("**Top Clothing Priority:**")
-            st.write(result["***Top Clothing Priority***"])
+            st.markdown("***Top Clothing Priority:***")
+            st.write(result["Top Clothing Priority"])
             
             st.markdown("**Color Statement:**")
-            st.write(result["***Color Statement***"])
+            st.write(result["Color Statement"])
             
-            st.markdown("**Suggested Shirt Colors:**")
+            st.markdown("***Suggested Shirt Colors:***")
             colors = [c.strip() for c in str(result["Suggested Shirt Colors"]).split(",")]
             linked_colors = [create_link(c) for c in colors]
             st.write(", ".join(linked_colors))
