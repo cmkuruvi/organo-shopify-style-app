@@ -4,6 +4,18 @@ import pandas as pd
 # ---------------------------
 # Custom CSS with brand colors and improved layout
 # ---------------------------
+@media only screen and (max-width: 600px) {
+    .swatch {
+        width: 30px;
+        height: 30px;
+        margin: 2px auto;
+    }
+    .swatch-label {
+        font-size: 0.7em;
+        margin-top: 2px;
+    }
+}
+
 st.markdown("""
     <style>
     :root {
@@ -83,7 +95,6 @@ def skin_color_selector():
     if "skin_color" not in st.session_state:
         st.session_state.skin_color = list(skin_colors.keys())[0]
     return st.session_state.skin_color
-    st.markdown(chosen_color)
 
 # ---------------------------
 # Mapping for Exclusive Color Group images (replace placeholder URLs with actual image links)
