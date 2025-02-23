@@ -94,7 +94,7 @@ color_group_images = {
     "Midnight Commander": "images/Midnight Commander.jpg",
     "Evergreen Chic": "images/Evergreen Chic.jpg",
     "Sun-Kissed Bliss": "images/Sun-Kissed Bliss.jpg",
-    "Peachy Whimsy": "images/Peachy Whimsy.jpgy",
+    "Peachy Whimsy": "images/Peachy Whimsy.jpg",
     "Golden Zest": "images/Golden Zest.jpg",
     "Celestial Sapphire": "images/Celestial Sapphire.jpg",
     "Frosted Elegance": "images/Frosted Elegance.jpg"
