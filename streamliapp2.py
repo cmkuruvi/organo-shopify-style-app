@@ -31,8 +31,8 @@ st.markdown("""
         margin-top: 20px;
     }
     .swatch {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         border: 2px solid #ccc;
         margin: 5px auto;
@@ -88,11 +88,11 @@ def skin_color_selector():
 # Mapping for Exclusive Color Group images (replace placeholder URLs with actual image links)
 # ---------------------------
 color_group_images = {
-    "Velvet Ember": "https://via.placeholder.com/150?text=Velvet+Ember",
-    "Earthy Espresso": "https://via.placeholder.com/150?text=Earthy+Espresso",
-    "Indigo Nomad": "https://via.placeholder.com/150?text=Indigo+Nomad",
-    "Midnight Commander": "https://via.placeholder.com/150?text=Midnight+Commander",
-    "Evergreen Chic": "https://via.placeholder.com/150?text=Evergreen+Chic",
+    "Velvet Ember": "images/Velvet Ember.jpg",
+    "Earthy Espresso": "images/Earthy Espresso.jpg",
+    "Indigo Nomad": "images/Indigo Nomad.jpg",
+    "Midnight Commander": "images/Midnight Commander.jpg",
+    "Evergreen Chic": "images/Evergreen Chic.jpg",
     "Sun-Kissed Bliss": "https://via.placeholder.com/150?text=Sun-Kissed+Bliss",
     "Peachy Whimsy": "https://via.placeholder.com/150?text=Peachy+Whimsy",
     "Golden Zest": "https://via.placeholder.com/150?text=Golden+Zest",
@@ -173,10 +173,10 @@ if st.button("Get My Color Psyche"):
         with st.container():
             st.subheader("Your Style Recommendation")
             
-            st.header("**Style Persona:**")
+            st.markdown("###Style Persona:**")
             st.write(result["Style Persona"])
             
-            st.markdown("**Celebrity Wardrobe Inspiration:**")
+            st.markdown("***Celebrity Wardrobe Inspiration:**")
             st.write(result["Celebrity Wardrobe Inspiration"])
             
             st.markdown("**Top Clothing Priority:**")
