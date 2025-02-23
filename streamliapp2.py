@@ -182,7 +182,7 @@ if st.button("Get My Color Psyche"):
             st.markdown("***Top Clothing Priority:***")
             st.write(result["Top Clothing Priority"])
             
-            st.markdown("**Color Statement:**")
+            st.markdown("***Color Statement:***")
             st.write(result["Color Statement"])
             
             st.markdown("***Suggested Shirt Colors:***")
