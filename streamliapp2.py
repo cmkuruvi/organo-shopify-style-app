@@ -137,7 +137,7 @@ with col1:
 with col2:
     st.markdown("### Exclusive Color Group Name")
     selected_color_group = st.selectbox("Choose your Color Group:", list(color_group_images.keys()))
-    st.image(color_group_images[selected_color_group], width=300)
+    st.image(color_group_images[selected_color_group], width=400)
     
     style_word = st.radio("Style Word:", ["Classic", "Minimalist", "Bold & Expressive", "Relaxed & Effortless", "Timeless", "Fashion-Forward"])
     clothing_occasion = st.radio("Clothing Occasion:", [
