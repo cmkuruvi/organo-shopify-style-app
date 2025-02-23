@@ -31,17 +31,17 @@ st.markdown("""
         margin-top: 20px;
     }
     .swatch {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         border: 2px solid #ccc;
-        margin: 5px auto;
+        margin: 2px auto;
         display: block;
         cursor: pointer;
     }
     .swatch-label {
         text-align: center;
-        font-size: 0.8em;
+        font-size: 0.7em;
         margin-top: 2px;
     }
     .swatch-container {
@@ -93,11 +93,11 @@ color_group_images = {
     "Indigo Nomad": "images/Indigo Nomad.jpg",
     "Midnight Commander": "images/Midnight Commander.jpg",
     "Evergreen Chic": "images/Evergreen Chic.jpg",
-    "Sun-Kissed Bliss": "https://via.placeholder.com/150?text=Sun-Kissed+Bliss",
-    "Peachy Whimsy": "https://via.placeholder.com/150?text=Peachy+Whimsy",
-    "Golden Zest": "https://via.placeholder.com/150?text=Golden+Zest",
-    "Celestial Sapphire": "https://via.placeholder.com/150?text=Celestial+Sapphire",
-    "Frosted Elegance": "https://via.placeholder.com/150?text=Frosted+Elegance"
+    "Sun-Kissed Bliss": "images/Sun-Kissed Bliss.jpg",
+    "Peachy Whimsy": "images/Peachy Whimsy.jpgy",
+    "Golden Zest": "images/Golden Zest.jpg",
+    "Celestial Sapphire": "images/Celestial Sapphire.jpg",
+    "Frosted Elegance": "images/Frosted Elegance.jpg"
 }
 
 # ---------------------------
@@ -173,17 +173,17 @@ if st.button("Get My Color Psyche"):
         with st.container():
             st.subheader("Your Style Recommendation")
             
-            st.markdown("###Style Persona:**")
+            st.markdown("### Style Persona:")
             st.write(result["Style Persona"])
             
-            st.markdown("***Celebrity Wardrobe Inspiration:**")
+            st.markdown("***Celebrity Wardrobe Inspiration:***")
             st.write(result["Celebrity Wardrobe Inspiration"])
             
             st.markdown("**Top Clothing Priority:**")
             st.write(result["Top Clothing Priority"])
             
             st.markdown("**Color Statement:**")
-            st.write(result["Color Statement"])
+            st.subheader(result["Color Statement"])
             
             st.markdown("**Suggested Shirt Colors:**")
             colors = [c.strip() for c in str(result["Suggested Shirt Colors"]).split(",")]
