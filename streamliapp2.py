@@ -4,17 +4,7 @@ import pandas as pd
 # ---------------------------
 # Custom CSS with brand colors and improved layout
 # ---------------------------
-@media only screen and (max-width: 600px) {
-    .swatch {
-        width: 30px;
-        height: 30px;
-        margin: 2px auto;
-    }
-    .swatch-label {
-        font-size: 0.7em;
-        margin-top: 2px;
-    }
-}
+
 
 st.markdown("""
     <style>
@@ -62,6 +52,33 @@ st.markdown("""
         justify-content: space-around;
     }
     </style>
+
+    <style>
+.swatch-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.swatch-item {
+    width: 30%;
+    margin: 5px;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    .swatch-item {
+        width: 45%; /* Slightly larger on mobile, fewer per row */
+    }
+    .swatch {
+        width: 30px;
+        height: 30px;
+    }
+    .swatch-label {
+        font-size: 0.7em;
+    }
+}
+</style>
+
+
 """, unsafe_allow_html=True)
 
 # ---------------------------
