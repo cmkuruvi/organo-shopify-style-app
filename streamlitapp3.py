@@ -126,7 +126,7 @@ favourite_season_images = {
 # ---------------------------
 # Load Data: Mapping and Product URL mapping
 # ---------------------------
-mapping_file = "demography_shirt.csv"
+mapping_file = "demography_shirt_optimized.csv"
 df = pd.read_csv(mapping_file)
 
 product_mapping_file = "Fabric Crosswalk_ColorQuiz_URL.csv"
