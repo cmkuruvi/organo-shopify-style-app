@@ -128,9 +128,9 @@ shopify_links = {
 }
 
 # ---------------------------
-# Mapping for Favourite Season images (for input)
+# Mapping for Favorite Season images (for input)
 # ---------------------------
-favourite_season_images = {
+favorite_season_images = {
     "Spring": "images/Spring.jpg",
     "Summer": "images/Summer.jpg",
     "Autumn": "images/Autumn.jpg",
@@ -179,10 +179,10 @@ with col1:
     hair_color = st.radio("Hair Color:", ["Blonde", "Black", "Dark Brown", "Red", "Other"], help="Select your hair color.")
 
 with col2:
-    st.markdown("### Favourite Season")
-    selected_favourite_season = st.selectbox("Choose your Favourite Season:", list(favourite_season_images.keys()),
-                                               help="Select the season that best represents your style preference.")
-    st.image(favourite_season_images[selected_favourite_season], width=400)
+    st.markdown("### Favorite Season")
+    selected_favorite_season = st.selectbox("Choose your Favorite Season:", list(favorite_season_images.keys()),
+                                              help="Select the season that best represents your style preference.")
+    st.image(favorite_season_images[selected_favorite_season], width=400)
     
     style_word = st.radio("Style Word:", ["Classic", "Minimalist", "Bold & Expressive", "Relaxed & Effortless", "Timeless", "Fashion-Forward"],
                           help="Select the word that best describes your style.")
@@ -203,7 +203,7 @@ if st.button("Get My Color Psyche"):
         (df["Skin Color"] == selected_skin_color) &
         (df["Gender"] == gender) &
         (df["Hair Color"] == hair_color) &
-        (df["Favorite Season"] == selected_favourite_season) &
+        (df["Favorite Season"] == selected_favorite_season) &
         (df["Style Word"] == style_word) &
         (df["Clothing Occasion"] == clothing_occasion)
     ]
