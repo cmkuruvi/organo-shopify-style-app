@@ -263,4 +263,36 @@ if st.button("Get My Color Psyche"):
                 st.write(cs)
                 st.markdown("**Suggested Shirt Color:**")
                 colors = [c.strip() for c in str(ssc).split(",")]
-                linked_colors = [create_link(c
+                linked_colors = [create_link(c) for c in colors]
+                st.write(", ".join(linked_colors))
+                st.markdown("**Styling Tip:**")
+                st.write(st_tip)
+        
+        # Save the recommendation result in session state for PDF generation
+        st.session_state["recommendation_result"] = result
+        
+    else:
+        st.warning("No exact match found! Please try different input values.")
+
+# ---------------------------
+# PDF Download & Submission Form
+# ---------------------------
+if "recommendation_result" in st.session_state:
+    st.markdown("---")
+    st.subheader("Receive Your Recommendation PDF")
+    name_input = st.text_input("Enter your Name", help="Your name will be used in the PDF.")
+    email_input = st.text_input("Enter your Email", help="Your email will be used to send you the PDF and record your submission.")
+    
+    if st.button("Download PDF & Submit"):
+        if name_input and email_input:
+            pdf_output = generate_pdf(st.session_state["recommendation_result"])
+            save_submission(name_input, email_input)
+            st.download_button(
+                label="Download Your PDF",
+                data=pdf_output,
+                file_name="StyleRecommendation.pdf",
+                mime="application/pdf"
+            )
+            st.success("Your submission has been saved and your PDF is ready for download!")
+        else:
+            st.error("Please enter both your name and email to proceed.")
