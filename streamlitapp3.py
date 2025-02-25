@@ -115,16 +115,16 @@ color_group_images = {
 # Mapping for Shopify collection links for Exclusive Color Groups
 # ---------------------------
 shopify_links = {
-    "Velvet Ember": "https://yourshopifystore.com/collections/velvet-ember",
-    "Earthy Espresso": "https://yourshopifystore.com/collections/earthy-espresso",
-    "Indigo Nomad": "https://yourshopifystore.com/collections/indigo-nomad",
-    "Midnight Commander": "https://yourshopifystore.com/collections/midnight-commander",
-    "Evergreen Chic": "https://yourshopifystore.com/collections/evergreen-chic",
-    "Sun-Kissed Bliss": "https://yourshopifystore.com/collections/sun-kissed-bliss",
-    "Peachy Whimsy": "https://yourshopifystore.com/collections/peachy-whimsy",
-    "Golden Zest": "https://yourshopifystore.com/collections/golden-zest",
-    "Celestial Sapphire": "https://yourshopifystore.com/collections/celestial-sapphire",
-    "Frosted Elegance": "https://yourshopifystore.com/collections/frosted-elegance"
+    "Velvet Ember": "https://organolinen.com/collections/velvet-ember",
+    "Earthy Espresso": "https://organolinen.com/collections/earthy-espresso",
+    "Indigo Nomad": "https://organolinen.com/collections/indigo-nomad",
+    "Midnight Commander": "https://organolinen.com/collections/midnight-commander",
+    "Evergreen Chic": "https://organolinen.com/collections/evergreen-chic",
+    "Sun-Kissed Bliss": "https://organolinen.com/collections/sun-kissed-bliss",
+    "Peachy Whimsy": "hhttps://organolinen.com/collections/peachy-whimsy",
+    "Golden Zest": "https://organolinen.com/collections/golden-zest",
+    "Celestial Sapphire": "https://organolinen.com/collections/celestial-sapphire",
+    "Frosted Elegance": "https://organolinen.com/collections/frosted-elegance"
 }
 
 # ---------------------------
