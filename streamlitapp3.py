@@ -203,7 +203,7 @@ if st.button("Get My Color Psyche"):
         (df["Skin Color"] == selected_skin_color) &
         (df["Gender"] == gender) &
         (df["Hair Color"] == hair_color) &
-        (df["Favourite Season"] == selected_favourite_season) &
+        (df["Favorite Season"] == selected_favourite_season) &
         (df["Style Word"] == style_word) &
         (df["Clothing Occasion"] == clothing_occasion)
     ]
