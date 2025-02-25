@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-from fpdf import FPDF
-import io
 
 # ---------------------------
 # Custom CSS with brand colors, improved layout, and responsive design
@@ -114,6 +112,22 @@ color_group_images = {
 }
 
 # ---------------------------
+# Mapping for Shopify collection links for Exclusive Color Groups
+# ---------------------------
+shopify_links = {
+    "Velvet Ember": "https://yourshopifystore.com/collections/velvet-ember",
+    "Earthy Espresso": "https://yourshopifystore.com/collections/earthy-espresso",
+    "Indigo Nomad": "https://yourshopifystore.com/collections/indigo-nomad",
+    "Midnight Commander": "https://yourshopifystore.com/collections/midnight-commander",
+    "Evergreen Chic": "https://yourshopifystore.com/collections/evergreen-chic",
+    "Sun-Kissed Bliss": "https://yourshopifystore.com/collections/sun-kissed-bliss",
+    "Peachy Whimsy": "https://yourshopifystore.com/collections/peachy-whimsy",
+    "Golden Zest": "https://yourshopifystore.com/collections/golden-zest",
+    "Celestial Sapphire": "https://yourshopifystore.com/collections/celestial-sapphire",
+    "Frosted Elegance": "https://yourshopifystore.com/collections/frosted-elegance"
+}
+
+# ---------------------------
 # Mapping for Favourite Season images (for input)
 # ---------------------------
 favourite_season_images = {
@@ -126,14 +140,14 @@ favourite_season_images = {
 # ---------------------------
 # Load Data: Mapping and Product URL mapping
 # ---------------------------
-mapping_file = "demography_shirt_optimized.csv"
+mapping_file = "demography_shirt.csv"
 df = pd.read_csv(mapping_file)
 
 product_mapping_file = "Fabric Crosswalk_ColorQuiz_URL.csv"
 product_df = pd.read_csv(product_mapping_file)
 
 # ---------------------------
-# Function to create clickable product link(s)
+# Function to create clickable product link(s) for a given color
 # ---------------------------
 def create_link(color):
     url = product_df.loc[product_df["Item Name ORGANO"] == color, "URL"]
@@ -141,42 +155,6 @@ def create_link(color):
         return f"[{color}]({url.values[0]})"
     else:
         return color
-
-# ---------------------------
-# Function to generate PDF from recommendation data using FPDF
-# ---------------------------
-def generate_pdf(result):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", "B", 16)
-    pdf.cell(0, 10, "Your Style Recommendation", ln=True)
-    pdf.set_font("Arial", "", 12)
-    pdf.cell(0, 10, f"Style Persona: {result['Style Persona']}", ln=True)
-    pdf.cell(0, 10, f"Celebrity Wardrobe Inspiration: {result['Celebrity Wardrobe Inspiration']}", ln=True)
-    pdf.cell(0, 10, f"Top Clothing Priority: {result['Top Clothing Priority']}", ln=True)
-    pdf.ln(5)
-    for i in range(1, 4):
-        pdf.set_font("Arial", "B", 14)
-        pdf.cell(0, 10, f"Color Group {i}: {result[f'Exclusive Color Group Name {i}']}", ln=True)
-        pdf.set_font("Arial", "", 12)
-        pdf.cell(0, 10, f"Color Statement {i}: {result[f'Color Statement {i}']}", ln=True)
-        pdf.cell(0, 10, f"Suggested Shirt Color {i}: {result[f'Suggested Shirt Color {i}']}", ln=True)
-        pdf.cell(0, 10, f"Styling Tip {i}: {result[f'Styling Tip {i}']}", ln=True)
-        pdf.ln(5)
-    pdf_output = pdf.output(dest="S").encode("latin1")
-    return pdf_output
-
-# ---------------------------
-# Function to save submission (name & email) to a local CSV file
-# ---------------------------
-def save_submission(name, email):
-    submission = pd.DataFrame({"Name": [name], "Email": [email]})
-    try:
-        old_df = pd.read_csv("submissions.csv")
-        new_df = pd.concat([old_df, submission], ignore_index=True)
-    except FileNotFoundError:
-        new_df = submission
-    new_df.to_csv("submissions.csv", index=False)
 
 # ---------------------------
 # App Header and Sidebar
@@ -199,7 +177,7 @@ with col1:
     gender = st.radio("Gender:", ["Male", "Female", "Unisex"], help="Select your gender.")
     selected_skin_color = skin_color_selector()
     hair_color = st.radio("Hair Color:", ["Blonde", "Black", "Dark Brown", "Red", "Other"], help="Select your hair color.")
-    
+
 with col2:
     st.markdown("### Favourite Season")
     selected_favourite_season = st.selectbox("Choose your Favourite Season:", list(favourite_season_images.keys()),
@@ -256,7 +234,12 @@ if st.button("Get My Color Psyche"):
                 ssc = result[f"Suggested Shirt Color {i}"]
                 st_tip = result[f"Styling Tip {i}"]
                 
-                st.markdown(f"### {ecg}")
+                # Display Exclusive Color Group Name as a link to the Shopify collection
+                if ecg in shopify_links:
+                    st.markdown(f"### [{ecg}]({shopify_links[ecg]})")
+                else:
+                    st.markdown(f"### {ecg}")
+                    
                 if ecg in color_group_images:
                     st.image(color_group_images[ecg], width=200)
                 st.markdown("**Color Statement:**")
@@ -267,32 +250,5 @@ if st.button("Get My Color Psyche"):
                 st.write(", ".join(linked_colors))
                 st.markdown("**Styling Tip:**")
                 st.write(st_tip)
-        
-        # Save the recommendation result in session state for PDF generation
-        st.session_state["recommendation_result"] = result
-        
     else:
         st.warning("No exact match found! Please try different input values.")
-
-# ---------------------------
-# PDF Download & Submission Form
-# ---------------------------
-if "recommendation_result" in st.session_state:
-    st.markdown("---")
-    st.subheader("Receive Your Recommendation PDF")
-    name_input = st.text_input("Enter your Name", help="Your name will be used in the PDF.")
-    email_input = st.text_input("Enter your Email", help="Your email will be used to send you the PDF and record your submission.")
-    
-    if st.button("Download PDF & Submit"):
-        if name_input and email_input:
-            pdf_output = generate_pdf(st.session_state["recommendation_result"])
-            save_submission(name_input, email_input)
-            st.download_button(
-                label="Download Your PDF",
-                data=pdf_output,
-                file_name="StyleRecommendation.pdf",
-                mime="application/pdf"
-            )
-            st.success("Your submission has been saved and your PDF is ready for download!")
-        else:
-            st.error("Please enter both your name and email to proceed.")
