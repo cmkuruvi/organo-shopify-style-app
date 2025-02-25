@@ -223,7 +223,7 @@ if st.button("Get My Color Psyche"):
         st.markdown("***Style Persona:***")
         st.write(result["Style Persona"])
         st.markdown("***Celebrity Wardrobe Inspiration:***")
-        st.subheader(st.write(result["Celebrity Wardrobe Inspiration"]))
+        st.subheader(result["Celebrity Wardrobe Inspiration"])
         st.markdown("***Top Clothing Priority:***")
         st.write(result["Top Clothing Priority"])
         
