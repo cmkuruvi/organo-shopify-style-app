@@ -140,7 +140,7 @@ favourite_season_images = {
 # ---------------------------
 # Load Data: Mapping and Product URL mapping
 # ---------------------------
-mapping_file = "demography_shirt.csv"
+mapping_file = "demography_shirt_optimized.csv"
 df = pd.read_csv(mapping_file)
 
 product_mapping_file = "Fabric Crosswalk_ColorQuiz_URL.csv"
@@ -187,8 +187,12 @@ with col2:
     style_word = st.radio("Style Word:", ["Classic", "Minimalist", "Bold & Expressive", "Relaxed & Effortless", "Timeless", "Fashion-Forward"],
                           help="Select the word that best describes your style.")
     clothing_occasion = st.radio("Clothing Occasion:", [
-        "Work Attire", "Special Occasions", "Vacations", "Formal Events", 
-        "Everyday Wear", "Gifts", "Travel", "Seasonal Changes"
+        "Boardroom to Brunch",
+        "Big Moments, Big Style",
+        "Wanderlust Wardrobe",
+        "Wrapped with Love",
+        "Weather-Ready Wear",
+        "Effortlessly Chic"
     ], help="Select the occasion for which you need a style recommendation.")
 
 # ---------------------------
