@@ -80,8 +80,11 @@ skin_colors = {
     "Deep Black": "#1C1C1C"
 }
 
+# Static image for the full skin color palette
+skin_palette_image = "images/skin_palette.jpg"  # Update with actual image path
+
 # ---------------------------
-# Function for Skin Color Selection with Radio Buttons & HEX Color Boxes
+# Function for Skin Color Selection with HEX Preview & Reference Image
 # ---------------------------
 def skin_color_selector():
     st.markdown("### Select Your Skin Color")
@@ -94,12 +97,15 @@ def skin_color_selector():
         horizontal=False
     )
 
-    # Display a color box next to the selected skin color
+    # Show a color preview box for the selected color
     st.markdown(
         f"<div style='width:50px; height:25px; background-color:{skin_colors[selected_skin_color]}; "
         f"border: 1px solid #000; display:inline-block; margin-left:10px;'></div>",
         unsafe_allow_html=True
     )
+
+    # Display the static skin color palette image
+    st.image(skin_palette_image, width=400, caption="Skin Color Palette")
 
     return selected_skin_color
 # ---------------------------
