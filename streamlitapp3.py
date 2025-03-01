@@ -80,21 +80,23 @@ skin_colors = {
     "Deep Black": "#1C1C1C"
 }
 
+# ---------------------------
+# Function for Skin Color Selection with Radio Buttons & Images
+# ---------------------------
 def skin_color_selector():
     st.markdown("### Select Your Skin Color")
-    chosen_color = st.session_state.get("skin_color", list(skin_colors.keys())[0])
-    cols = st.columns(len(skin_colors))
-    for idx, (color_name, hex_code) in enumerate(skin_colors.items()):
-        with cols[idx]:
-            if st.button("", key=f"skin_{idx}", help=color_name):
-                st.session_state.skin_color = color_name
-                chosen_color = color_name
-            st.markdown(f"<div class='swatch' style='background-color: {hex_code};'></div>", unsafe_allow_html=True)
-            st.markdown(f"<div class='swatch-label'>{color_name}</div>", unsafe_allow_html=True)
-    if "skin_color" not in st.session_state:
-        st.session_state.skin_color = list(skin_colors.keys())[0]
-    return st.session_state.skin_color
+    
+    selected_skin_color = st.radio(
+        label="Choose a skin color:",
+        options=list(skin_colors.keys()),
+        format_func=lambda x: x,  # Display option name
+        horizontal=False
+    )
 
+    # Display the selected image next to the radio button
+    st.image(skin_colors[selected_skin_color], width=200, caption=selected_skin_color)
+
+    return selected_skin_color
 # ---------------------------
 # Mapping for Exclusive Color Group images (for outputs)
 # ---------------------------
