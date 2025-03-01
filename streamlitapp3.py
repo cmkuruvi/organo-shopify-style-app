@@ -81,11 +81,12 @@ skin_colors = {
 }
 
 # ---------------------------
-# Function for Skin Color Selection with Radio Buttons & Images
+# Function for Skin Color Selection with Radio Buttons & HEX Color Boxes
 # ---------------------------
 def skin_color_selector():
     st.markdown("### Select Your Skin Color")
-    
+
+    # Create radio button selection
     selected_skin_color = st.radio(
         label="Choose a skin color:",
         options=list(skin_colors.keys()),
@@ -93,8 +94,12 @@ def skin_color_selector():
         horizontal=False
     )
 
-    # Display the selected image next to the radio button
-    st.image(skin_colors[selected_skin_color], width=200, caption=selected_skin_color)
+    # Display a color box next to the selected skin color
+    st.markdown(
+        f"<div style='width:50px; height:25px; background-color:{skin_colors[selected_skin_color]}; "
+        f"border: 1px solid #000; display:inline-block; margin-left:10px;'></div>",
+        unsafe_allow_html=True
+    )
 
     return selected_skin_color
 # ---------------------------
