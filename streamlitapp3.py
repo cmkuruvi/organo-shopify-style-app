@@ -81,7 +81,7 @@ skin_colors = {
 }
 
 # Static image for the full skin color palette
-skin_palette_image = "images/skin_palette.jpg"  # Update with actual image path
+skin_palette_image = "images/skin_palette.png"  # Update with actual image path
 
 # ---------------------------
 # Function for Skin Color Selection with HEX Preview & Reference Image
