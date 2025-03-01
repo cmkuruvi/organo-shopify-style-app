@@ -105,7 +105,7 @@ def skin_color_selector():
     )
 
     # Display the static skin color palette image
-    st.image(skin_palette_image, width=400, caption="Skin Color Palette")
+    st.image(skin_palette_image, width=200, caption="Skin Color Palette")
 
     return selected_skin_color
 # ---------------------------
