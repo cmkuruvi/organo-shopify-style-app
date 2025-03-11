@@ -113,7 +113,7 @@ def skin_color_selector():
 # ---------------------------
 color_group_images = {
     "SUNNY RAY": "images/SUNNY RAY.png",
-    "HARBOR TIDE": "images/HARBOR TIDE.png",
+    "HARBOR TIDE": "images/HARBOR TIDE.jpg",
     "SUNNY SHINE": "images/SUNNY SHINE.png",
     "FORREST LAKE": "images/FORREST LAKE.png",
     "EMBER GLOW": "images/EMBER GLOW.png",
