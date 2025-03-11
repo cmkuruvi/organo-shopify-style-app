@@ -139,8 +139,8 @@ shopify_links = {
     "URBAN MYST": "https://organolinen.com/collections/urban-myst-linen-collection",
     "DUNE DUST": "https://organolinen.com/collections/dune-dust-shirts-linen",
     "HARVEST AUTUMN": "https://organolinen.com/collections/harvest-autumn-linen-shirting-collection",
-    "DUNE EARTH": "https://organolinen.com/collections/dune-earth-linen-shirts"
-    "FROSTED SKY": "https://organolinen.com/collections/frosted-sky-shirting-linen"
+    "DUNE EARTH": "https://organolinen.com/collections/dune-earth-linen-shirts",
+    "FROSTED SKY": "https://organolinen.com/collections/frosted-sky-shirting-linen",
     "MOONLIT CLOUD": "https://organolinen.com/collections/moonlit-cloud-shirt-linen"
 }
 
