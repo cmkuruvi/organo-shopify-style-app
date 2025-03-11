@@ -121,8 +121,8 @@ color_group_images = {
     "URBAN MYST": "images/URBAN MYST.png",
     "DUNE DUST": "images/DUNE DUST.png",
     "HARVEST AUTUMN": "images/HARVEST AUTUMN.png",
-    "DUNE EARTH": "images/DUNE EARTH.png"
-    "FROSTED SKY": "images/FROSTED SKY.png"
+    "DUNE EARTH": "images/DUNE EARTH.png",
+    "FROSTED SKY": "images/FROSTED SKY.png",
     "MOONLIT CLOUD": "images/MOONLIT CLOUD.png"
 }
 
