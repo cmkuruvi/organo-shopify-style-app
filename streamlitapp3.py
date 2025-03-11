@@ -262,7 +262,7 @@ if st.button("Get My Color Psyche"):
                     st.markdown(f"### {ecg}")
                     
                 if ecg in color_group_images:
-                    st.image(color_group_images[ecg], width=200)
+                    st.image(color_group_images[ecg], width=400)
                 st.markdown("**Color Statement:**")
                 st.write(cs)
                 st.markdown("**Suggested Shirt Color:**")
