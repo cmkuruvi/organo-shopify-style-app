@@ -112,32 +112,36 @@ def skin_color_selector():
 # Mapping for Exclusive Color Group images (for outputs)
 # ---------------------------
 color_group_images = {
-    "Velvet Ember": "images/Velvet Ember.jpg",
-    "Earthy Espresso": "images/Earthy Espresso.jpg",
-    "Indigo Nomad": "images/Indigo Nomad.jpg",
-    "Midnight Commander": "images/Midnight Commander.jpg",
-    "Evergreen Chic": "images/Evergreen Chic.jpg",
-    "Sun-Kissed Bliss": "images/Sun-Kissed Bliss.jpg",
-    "Peachy Whimsy": "images/Peachy Whimsy.jpg",
-    "Golden Zest": "images/Golden Zest.jpg",
-    "Celestial Sapphire": "images/Celestial Sapphire.jpg",
-    "Frosted Elegance": "images/Frosted Elegance.jpg"
+    "SUNNY RAY": "images/SUNNY RAY.png",
+    "HARBOR TIDE": "images/HARBOR TIDE.jpg",
+    "SUNNY SHINE": "images/SUNNY SHINE.jpg",
+    "FORREST LAKE": "images/FORREST LAKE.jpg",
+    "EMBER GLOW": "images/EMBER GLOW.jpg",
+    "OBSIDIAN RAVEN": "images/OBSIDIAN RAVEN.jpg",
+    "URBAN MYST": "images/URBAN MYST.jpg",
+    "DUNE DUST": "images/DUNE DUST.jpg",
+    "HARVEST AUTUMN": "images/HARVEST AUTUMN.jpg",
+    "DUNE EARTH": "images/DUNE EARTH.jpg"
+    "FROSTED SKY": "images/FROSTED SKY.jpg"
+    "MOONLIT CLOUD": "images/MOONLIT CLOUD.jpg"
 }
 
 # ---------------------------
 # Mapping for Shopify collection links for Exclusive Color Groups
 # ---------------------------
 shopify_links = {
-    "Velvet Ember": "https://organolinen.com/collections/velvet-ember",
-    "Earthy Espresso": "https://organolinen.com/collections/earthy-espresso",
-    "Indigo Nomad": "https://organolinen.com/collections/indigo-nomad",
-    "Midnight Commander": "https://organolinen.com/collections/midnight-commander",
-    "Evergreen Chic": "https://organolinen.com/collections/evergreen-chic",
-    "Sun-Kissed Bliss": "https://organolinen.com/collections/sun-kissed-bliss",
-    "Peachy Whimsy": "hhttps://organolinen.com/collections/peachy-whimsy",
-    "Golden Zest": "https://organolinen.com/collections/golden-zest",
-    "Celestial Sapphire": "https://organolinen.com/collections/celestial-sapphire",
-    "Frosted Elegance": "https://organolinen.com/collections/frosted-elegance"
+    "SUNNY RAY": "https://organolinen.com/collections/sunny-ray-yellow-linen-collection",
+    "HARBOR TIDE": "https://organolinen.com/collections/harbor-tide-blue-linen-collection",
+    "SUNNY SHINE": "https://organolinen.com/collections/sunny-shine-yellow-linen-collection",
+    "FORREST LAKE": "https://organolinen.com/collections/forest-lake-green-linen-shirting",
+    "EMBER GLOW": "https://organolinen.com/collections/ember-glow-red-linen-shirting",
+    "OBSIDIAN RAVEN": "https://organolinen.com/collections/obsidian-raven-linen-collection",
+    "URBAN MYST": "https://organolinen.com/collections/urban-myst-linen-collection",
+    "DUNE DUST": "https://organolinen.com/collections/dune-dust-shirts-linen",
+    "HARVEST AUTUMN": "https://organolinen.com/collections/harvest-autumn-linen-shirting-collection",
+    "DUNE EARTH": "https://organolinen.com/collections/dune-earth-linen-shirts"
+    "FROSTED SKY": "https://organolinen.com/collections/frosted-sky-shirting-linen"
+    "MOONLIT CLOUD": "https://organolinen.com/collections/moonlit-cloud-shirt-linen"
 }
 
 # ---------------------------
@@ -153,7 +157,7 @@ favorite_season_images = {
 # ---------------------------
 # Load Data: Mapping and Product URL mapping
 # ---------------------------
-mapping_file = "demography_shirt_optimized.csv"
+mapping_file = "demography_shirt_final_updated.csv"
 df = pd.read_csv(mapping_file)
 
 product_mapping_file = "Fabric Crosswalk_ColorQuiz_URL.csv"
