@@ -112,18 +112,18 @@ def skin_color_selector():
 # Mapping for Exclusive Color Group images (for outputs)
 # ---------------------------
 color_group_images = {
-    "SUNNY RAY": "images/SUNNY RAY.png",
+    "SUNNY RAY": "images/SUNNY RAY.jpg",
     "HARBOR TIDE": "images/HARBOR TIDE.jpg",
-    "SUNNY SHINE": "images/SUNNY SHINE.png",
-    "FORREST LAKE": "images/FORREST LAKE.png",
-    "EMBER GLOW": "images/EMBER GLOW.png",
-    "OBSIDIAN RAVEN": "images/OBSIDIAN RAVEN.png",
-    "URBAN MYST": "images/URBAN MYST.png",
-    "DUNE DUST": "images/DUNE DUST.png",
-    "HARVEST AUTUMN": "images/HARVEST AUTUMN.png",
-    "DUNE EARTH": "images/DUNE EARTH.png",
-    "FROSTED SKY": "images/FROSTED SKY.png",
-    "MOONLIT CLOUD": "images/MOONLIT CLOUD.png"
+    "SUNNY SHINE": "images/SUNNY SHINE.jpg",
+    "FORREST LAKE": "images/FORREST LAKE.jpg",
+    "EMBER GLOW": "images/EMBER GLOW.jpg",
+    "OBSIDIAN RAVEN": "images/OBSIDIAN RAVEN.jpg",
+    "URBAN MYST": "images/URBAN MYST.jpg",
+    "DUNE DUST": "images/DUNE DUST.jpg",
+    "HARVEST AUTUMN": "images/HARVEST AUTUMN.jpg",
+    "DUNE EARTH": "images/DUNE EARTH.jpg",
+    "FROSTED SKY": "images/FROSTED SKY.jpg",
+    "MOONLIT CLOUD": "images/MOONLIT CLOUD.jpg"
 }
 
 # ---------------------------
