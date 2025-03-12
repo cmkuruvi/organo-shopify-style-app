@@ -127,23 +127,70 @@ color_group_images = {
 }
 
 # ---------------------------
-# Mapping for Shopify collection links for Exclusive Color Groups
+# Shopify Links Based on Gender Selection
 # ---------------------------
 shopify_links = {
-    "SUNNY RAY": "https://organolinen.com/collections/sunny-ray-yellow-linen-collection",
-    "HARBOR TIDE": "https://organolinen.com/collections/harbor-tide-blue-linen-collection",
-    "SUNNY SHINE": "https://organolinen.com/collections/sunny-shine-yellow-linen-collection",
-    "FORREST LAKE": "https://organolinen.com/collections/forest-lake-green-linen-shirting",
-    "EMBER GLOW": "https://organolinen.com/collections/ember-glow-red-linen-shirting",
-    "OBSIDIAN RAVEN": "https://organolinen.com/collections/obsidian-raven-linen-collection",
-    "URBAN MYST": "https://organolinen.com/collections/urban-myst-linen-collection",
-    "DUNE DUST": "https://organolinen.com/collections/dune-dust-shirts-linen",
-    "HARVEST AUTUMN": "https://organolinen.com/collections/harvest-autumn-linen-shirting-collection",
-    "DUNE EARTH": "https://organolinen.com/collections/dune-earth-linen-shirts",
-    "FROSTED SKY": "https://organolinen.com/collections/frosted-sky-shirting-linen",
-    "MOONLIT CLOUD": "https://organolinen.com/collections/moonlit-cloud-shirt-linen"
+    "SUNNY RAY": {
+        "Male": "https://organolinen.com/products/mens-linen-shirt-yellow-sunny",
+        "Female": "https://organolinen.com/products/sunny-women-linen-shirt-yellow"
+    },
+    "HARBOR TIDE": {
+        "Male": "https://organolinen.com/products/mens-linen-shirt-blue-harbor",
+        "Female": "https://organolinen.com/products/womens-linen-shirt-harbor-blue"
+    },
+    "SUNNY SHINE": {
+        "Male": "https://organolinen.com/products/mens-linen-shirt-yellow-sunny",
+        "Female": "https://organolinen.com/products/sunny-women-linen-shirt-yellow"
+    },
+    "FORREST LAKE": {
+        "Male": "https://organolinen.com/products/mens-linen-shirt-green-forrest",
+        "Female": "https://organolinen.com/products/mens-linen-shirt-green-forrest"
+    },
+    "EMBER GLOW": {
+        "Male": "https://organolinen.com/products/mens-linen-shirt-ember-red",
+        "Female": "https://organolinen.com/products/ladies-linen-shirt-ember"
+    },
+    "OBSIDIAN RAVEN": {
+        "Male": "https://organolinen.com/products/mens-linen-heavy-shirt-raven",
+        "Female": "https://organolinen.com/products/womens-heavy-linen-shirt-raven"
+    },
+    "URBAN MYST": {
+        "Male": "https://organolinen.com/products/myst-pure-linen-shirt",
+        "Female": "https://organolinen.com/products/myst-pure-linen-shirt"
+    },
+    "DUNE DUST": {
+        "Male": "https://organolinen.com/products/dune-linen-shirt-men-tan",
+        "Female": "https://organolinen.com/products/dune-linen-shirt-men-tan"
+    },
+    "HARVEST AUTUMN": {
+        "Male": "https://organolinen.com/products/mens-pumpkin-harvest-linen-shirt",
+        "Female": "https://organolinen.com/products/womens-pink-linen-shirt-harvest"
+    },
+    "DUNE EARTH": {
+        "Male": "https://organolinen.com/products/dune-linen-shirt-men-tan",
+        "Female": "https://organolinen.com/products/dune-linen-shirt-men-tan"
+    },
+    "FROSTED SKY": {
+        "Male": "https://organolinen.com/products/mens-linen-shirt-blue-harbor",
+        "Female": "https://organolinen.com/products/womens-linen-shirt-harbor-blue"
+    },
+    "MOONLIT CLOUD": {
+        "Male": "https://organolinen.com/products/men-white-linen-shirt-cloud",
+        "Female": "https://organolinen.com/products/womens-classic-white-linen-shirt"
+    }
 }
 
+# ---------------------------
+# Function to Get Correct Shopify Link
+# ---------------------------
+def get_shopify_link(color_group_name, gender):
+    """Returns the correct Shopify link based on Gender and Color Group."""
+    if color_group_name in shopify_links:
+        if gender == "Female":
+            return shopify_links[color_group_name]["Female"]
+        else:  # Male & Unisex both use Male links
+            return shopify_links[color_group_name]["Male"]
+    return "#"  # Default link if color group is missing (shouldn't happen)
 # ---------------------------
 # Mapping for Favorite Season images (for input)
 # ---------------------------
