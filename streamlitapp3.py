@@ -191,6 +191,7 @@ def get_shopify_link(color_group_name, gender):
         else:  # Male & Unisex both use Male links
             return shopify_links[color_group_name]["Male"]
     return "#"  # Default link if color group is missing (shouldn't happen)
+    
 # ---------------------------
 # Mapping for Favorite Season images (for input)
 # ---------------------------
@@ -301,12 +302,13 @@ if st.button("Get My Color Psyche"):
                 cs = result[f"Color Statement {i}"]
                 ssc = result[f"Suggested Shirt Color {i}"]
                 st_tip = result[f"Styling Tip {i}"]
+
+                # Get correct link based on Gender
+                shopify_url = get_shopify_link(ecg, gender)
+
+                # Display Exclusive Color Group Name as a clickable link
+                st.markdown(f"### [{ecg}]({shopify_url})")
                 
-                # Display Exclusive Color Group Name as a link to the Shopify collection
-                if ecg in shopify_links:
-                    st.markdown(f"### [{ecg}]({shopify_links[ecg]})")
-                else:
-                    st.markdown(f"### {ecg}")
                     
                 if ecg in color_group_images:
                     st.image(color_group_images[ecg], width=400)
