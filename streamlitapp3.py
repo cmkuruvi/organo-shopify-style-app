@@ -208,14 +208,14 @@ favorite_season_images = {
 mapping_file = "demography_shirt_final_updated.csv"
 df = pd.read_csv(mapping_file)
 
-product_mapping_file = "Fabric Crosswalk_ColorQuiz_URL.csv"
+product_mapping_file = "Fabric Crosswalk - 12 COLOR SETS.csv"
 product_df = pd.read_csv(product_mapping_file)
 
 # ---------------------------
 # Function to create clickable product link(s) for a given color
 # ---------------------------
 def create_link(color):
-    url = product_df.loc[product_df["Item Name ORGANO"] == color, "URL"]
+    url = product_df.loc[product_df["Item Name ORGANO"] == color, "Color name URL"]
     if not url.empty:
         return f"[{color}]({url.values[0]})"
     else:
