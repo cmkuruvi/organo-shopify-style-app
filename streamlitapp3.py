@@ -245,7 +245,7 @@ with col1:
 
 with col2:
     st.markdown("### Favorite Season")
-    selected_favorite_season = st.selectbox("Choose your Favorite Season:", list(favorite_season_images.keys()),
+    selected_favorite_season = st.selectbox("What season are you?:", list(favorite_season_images.keys()),
                                               help="Select the season that best represents your style preference.")
     st.image(favorite_season_images[selected_favorite_season], width=400)
     
